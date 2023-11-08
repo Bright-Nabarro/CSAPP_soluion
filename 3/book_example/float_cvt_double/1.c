@@ -1,0 +1,1 @@
+float d2f(double d) { return (float)d; }
