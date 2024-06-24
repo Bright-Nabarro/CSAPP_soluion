@@ -1,0 +1,4 @@
+// A if REG is %rsp, program push %rsp-8 not original %rsp
+
+movq REG, -8(%rsp)
+subq $8, %rsp

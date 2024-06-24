@@ -1,0 +1,1 @@
+/usr/sbin/cc CMakeFiles/app.dir/fstatcheck.c.o CMakeFiles/app.dir/mnt/d/cpptest/c/computer_systems/csapp.c.o -o app

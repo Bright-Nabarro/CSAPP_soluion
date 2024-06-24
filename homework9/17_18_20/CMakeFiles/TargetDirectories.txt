@@ -1,0 +1,3 @@
+/mnt/d/cpptest/c/computer_systems/homework9/17_18_20/CMakeFiles/app.dir
+/mnt/d/cpptest/c/computer_systems/homework9/17_18_20/CMakeFiles/edit_cache.dir
+/mnt/d/cpptest/c/computer_systems/homework9/17_18_20/CMakeFiles/rebuild_cache.dir

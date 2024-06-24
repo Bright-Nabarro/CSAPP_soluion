@@ -1,0 +1,1 @@
+/usr/sbin/cc -g CMakeFiles/app.dir/mem_stm.c.o CMakeFiles/app.dir/mm.c.o CMakeFiles/app.dir/test.c.o -o app

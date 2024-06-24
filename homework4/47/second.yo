@@ -1,0 +1,73 @@
+0x000:                      | 	.pos 0
+0x000: 30f40002000000000000 | 	irmovq stack, %rsp
+0x00a: 800d01000000000000   | 	call main
+0x013: 00                   | 	halt
+                            | 
+0x018:                      | .align 8
+0x018:                      | g_data:
+0x018: 0000000000000000     | 	.quad	0
+0x020: 0300000000000000     | 	.quad	3
+0x028: 0600000000000000     | 	.quad	6
+0x030: 0800000000000000     | 	.quad	8
+0x038: 0400000000000000     | 	.quad	4
+0x040: 0400000000000000     | 	.quad	4
+0x048: 0300000000000000     | 	.quad	3
+0x050: 0200000000000000     | 	.quad	2
+0x058: 0100000000000000     | 	.quad	1
+0x060:                      | g_data_end:
+                            | 
+0x060:                      | bubble_sort:
+                            | #	subq	$8, %rsi
+0x060: 30f90800000000000000 | 	irmovq	$8, %r9
+0x06a: 6196                 | 	subq	%r9, %rsi
+0x06c: 70f400000000000000   | 	jmp	L2
+0x075:                      | L3:
+                            | #	addq	$8, %rax
+0x075: 30f90800000000000000 | 	irmovq	$8, %r9
+0x07f: 6090                 | 	addq	%r9, %rax
+0x081:                      | L5:
+                            | #	cmpq	%rsi, %rax
+0x081: 2008                 | 	rrmovq	%rax, %r8
+0x083: 6168                 | 	subq	%rsi, %r8
+0x085: 73e800000000000000   | 	je	L7
+                            | #	mrmovq	8(%rax), %rdx
+0x08e: 30f90800000000000000 | 	irmovq	$8, %r9
+0x098: 200a                 | 	rrmovq	%rax, %r10
+0x09a: 609a                 | 	addq	%r9, %r10
+0x09c: 502a0000000000000000 | 	mrmovq	(%r10), %rdx
+0x0a6: 50100000000000000000 | 	mrmovq	(%rax), %rcx
+                            | #	cmpq	%rcx, %rdx
+0x0b0: 2029                 | 	rrmovq	%rdx, %r9
+0x0b2: 6119                 | 	subq	%rcx, %r9
+0x0b4: 757500000000000000   | 	jge	L3
+                            | #	rmmovq	%rcx, 8(%rax)
+0x0bd: 30f90800000000000000 | 	irmovq	8, %r9
+0x0c7: 200a                 | 	rrmovq	%rax, %r10
+0x0c9: 609a                 | 	addq	%r9, %r10
+0x0cb: 401a0000000000000000 | 	rmmovq	%rcx, (%r10)
+0x0d5: 40200000000000000000 | 	rmmovq	%rdx, (%rax)
+0x0df: 707500000000000000   | 	jmp	L3
+0x0e8:                      | L7:
+                            | #	subq	$8, %rsi
+0x0e8: 30f90800000000000000 | 	irmovq	$8, %r9
+0x0f2: 6196                 | 	subq	%r9, %rsi
+0x0f4:                      | L2:
+                            | #	cmpq	%rdi, %rsi
+0x0f4: 2068                 | 	rrmovq	%rsi, %r8
+0x0f6: 6178                 | 	subq	%rdi, %r8
+0x0f8: 730c01000000000000   | 	je	L8
+0x101: 2070                 | 	rrmovq	%rdi, %rax
+0x103: 708100000000000000   | 	jmp	L5
+0x10c:                      | L8:
+0x10c: 90                   | 	ret
+                            | 
+0x10d:                      | main:
+                            | #	leaq	80+g_data(%rip), %rsi
+0x10d: 30f71800000000000000 | 	irmovq	g_data, %rdi
+0x117: 30f66000000000000000 | 	irmovq	g_data_end, %rsi
+                            | #	leaq	-80(%rsi), %rdi
+0x121: 806000000000000000   | 	call	bubble_sort
+0x12a: 90                   | 	ret
+                            | 
+0x200:                      | .pos 0x200
+0x200:                      | stack:

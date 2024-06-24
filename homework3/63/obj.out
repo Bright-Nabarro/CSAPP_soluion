@@ -1,0 +1,27 @@
+
+switch_prob.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <switch_prob>:
+   0:	48 83 ee 3c          	sub    $0x3c,%rsi
+   4:	48 83 fe 05          	cmp    $0x5,%rsi
+   8:	77 34                	ja     3e <switch_prob+0x3e>
+   a:	48 8d 15 00 00 00 00 	lea    0x0(%rip),%rdx        # 11 <switch_prob+0x11>
+  11:	48 63 04 b2          	movslq (%rdx,%rsi,4),%rax
+  15:	48 01 d0             	add    %rdx,%rax
+  18:	ff e0                	jmp    *%rax
+  1a:	48 8d 04 fd 00 00 00 	lea    0x0(,%rdi,8),%rax
+  21:	00 
+  22:	c3                   	ret
+  23:	48 8d 47 07          	lea    0x7(%rdi),%rax
+  27:	48 85 ff             	test   %rdi,%rdi
+  2a:	48 0f 48 f8          	cmovs  %rax,%rdi
+  2e:	48 89 f8             	mov    %rdi,%rax
+  31:	48 c1 f8 03          	sar    $0x3,%rax
+  35:	c3                   	ret
+  36:	48 8d 3c 7f          	lea    (%rdi,%rdi,2),%rdi
+  3a:	48 0f af ff          	imul   %rdi,%rdi
+  3e:	48 8d 47 4b          	lea    0x4b(%rdi),%rax
+  42:	c3                   	ret

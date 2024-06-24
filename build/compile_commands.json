@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/mnt/d/cpptest/c/computer_systems/build",
+  "command": "/usr/sbin/gcc -g -o CMakeFiles/app.dir/mem_stm.c.o -c /mnt/d/cpptest/c/computer_systems/homework9/17_18_20/mem_stm.c",
+  "file": "/mnt/d/cpptest/c/computer_systems/homework9/17_18_20/mem_stm.c",
+  "output": "CMakeFiles/app.dir/mem_stm.c.o"
+},
+{
+  "directory": "/mnt/d/cpptest/c/computer_systems/build",
+  "command": "/usr/sbin/gcc -g -o CMakeFiles/app.dir/mm.c.o -c /mnt/d/cpptest/c/computer_systems/homework9/17_18_20/mm.c",
+  "file": "/mnt/d/cpptest/c/computer_systems/homework9/17_18_20/mm.c",
+  "output": "CMakeFiles/app.dir/mm.c.o"
+},
+{
+  "directory": "/mnt/d/cpptest/c/computer_systems/build",
+  "command": "/usr/sbin/gcc -g -o CMakeFiles/app.dir/test.c.o -c /mnt/d/cpptest/c/computer_systems/homework9/17_18_20/test.c",
+  "file": "/mnt/d/cpptest/c/computer_systems/homework9/17_18_20/test.c",
+  "output": "CMakeFiles/app.dir/test.c.o"
+}
+]

@@ -1,0 +1,5 @@
+CompileFlags:
+  Add: 
+    - "-isystem/home/lin17/tiny_utility/c/include"
+    - "-x"
+    - "c-header"
