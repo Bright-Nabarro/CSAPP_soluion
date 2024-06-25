@@ -1,3 +1,6 @@
-.*/
+\.*/
 simulator/
 simulator_win/
+app
+*.o
+a.out
